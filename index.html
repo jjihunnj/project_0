@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Погода — Weather App</title>
+  
+  <link rel="icon" href="pip/cloud.png" type="image/x-icon">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bg-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+  </div>
+
+  <div class="container">
+    <header>
+      <h1>🌤 Погода</h1>
+      <p class="subtitle">Актуальный прогноз в один клик</p>
+    </header>
+
+    <div class="search-box">
+      <input 
+        type="text" 
+        id="cityInput" 
+        placeholder="Введите город..." 
+        autocomplete="off"
+      >
+      <button id="searchBtn">Найти</button>
+    </div>
+
+    <div id="loading" class="loading hidden">
+      <div class="spinner"></div>
+      <p>Загружаем погоду...</p>
+    </div>
+
+    <div id="error" class="error hidden"></div>
+
+    <main id="weatherCard" class="weather-card hidden">
+      <div class="location">
+        <h2 id="cityName">—</h2>
+        <p id="countryName">—</p>
+      </div>
+
+      <div class="main-temp">
+
+        <div id="weatherIcon" class="weather-icon">☁️</div>
+        <div class="temp-value">
+          <span id="temperature">—</span>
+          <span class="unit">°C</span>
+        </div>
+        <p id="weatherDescription">—</p>
+        <p id="feelsLike" class="feels-like">Ощущается как —°</p>
+      </div>
+
+      <div class="details">
+        <div class="detail-item">
+          <span class="label">Влажность</span>
+          <span id="humidity" class="value">—%</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Ветер</span>
+          <span id="wind" class="value">— км/ч</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Давление</span>
+          <span id="pressure" class="value">—</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Видимость</span>
+          <span id="visibility" class="value">—</span>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>Данные: <a href="https://wttr.in/" target="_blank" rel="noopener">wttr.in</a></p>
+      <p class="note">Учебный проект</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
